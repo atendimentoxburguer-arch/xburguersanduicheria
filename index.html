@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-Burguer Sanduicheria</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff8f0;
+      color: #4a1c00;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #b30000, #d35400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 4rem;
+      color: #ffcc33;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .btn-pedido {
+      display: inline-block;
+      padding: 18px 35px;
+      background: #ffcc33;
+      color: #7a0000;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-pedido:hover {
+      background: #fff;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 380px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .titulo {
+      text-align: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.8rem;
+      color: #b30000;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      border-top: 6px solid #ffcc33;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #b30000;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .preco {
+      display: block;
+      margin-top: 15px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #d35400;
+    }
+
+    #cardapio {
+      background: #fff1dc;
+    }
+
+    .cardapio-box {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px dashed #ccc;
+      font-size: 1.1rem;
+    }
+
+    .menu-item strong {
+      color: #b30000;
+    }
+
+    .pedido-final {
+      background: linear-gradient(135deg, #b30000, #d35400);
+      text-align: center;
+      color: white;
+    }
+
+    .pedido-final-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.08);
+      padding: 50px 30px;
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .pedido-final h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3rem;
+      color: #ffcc33;
+      margin-bottom: 20px;
+    }
+
+    .pedido-final p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .pedido-final .btn-pedido {
+      margin-top: 20px;
+    }
+
+    .contato-info {
+      margin-top: 35px;
+      font-size: 1rem;
+    }
+
+    .contato-info strong {
+      color: #ffcc33;
+    }
+
+    footer {
+      background: #7a0000;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        min-height: auto;
+        padding: 60px 20px;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .hero-text {
+        min-width: 100%;
+      }
+
+      .hero-image {
+        min-width: 100%;
+      }
+
+      .hero-image img {
+        max-width: 250px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+        margin: 0 auto 25px;
+      }
+
+      .btn-pedido {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 20px;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+
+      .titulo {
+        font-size: 2rem;
+        margin-bottom: 35px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .card h3 {
+        font-size: 1.3rem;
+      }
+
+      .cardapio-box {
+        padding: 25px 18px;
+      }
+
+      .menu-item {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1rem;
+      }
+
+      .pedido-final-box {
+        padding: 35px 20px;
+      }
+
+      .pedido-final h2 {
+        font-size: 2rem;
+      }
+
+      .pedido-final p,
+      .contato-info {
+        font-size: 0.95rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.9rem;
+      }
+
+      .titulo {
+        font-size: 1.7rem;
+      }
+
+      .btn-pedido {
+        border-radius: 18px;
+      }
+
+      .menu-item span:last-child {
+        font-weight: bold;
+        color: #d35400;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>A Melhor Sanduicheria Da Cidade!</h1>
+        <p>
+          Hambúrgueres artesanais, sanduíches tradicionais e aquele sabor irresistível que você merece.
+        </p>
+
+        <a href="#pedido" class="btn-pedido">
+          Faça seu pedido!
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img src="./logo/logobonita.png" alt="Logo X-Burguer Sanduicheria">
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="titulo">Por que escolher a nossa lanchonete?</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Ingredientes Frescos</h3>
+          <p>
+            Utilizamos produtos selecionados para garantir qualidade e muito sabor em cada pedido.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Entrega Rápida</h3>
+          <p>
+            Seu lanche chega quentinho e rápido para você aproveitar sem demora.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Combos Especiais</h3>
+          <p>
+            Os melhores combos para matar sua fome com economia e muito sabor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cardapio">
+    <div class="container">
+      <h2 class="titulo">Mais Pedidos de nossa loja</h2>
+
+      <div class="cardapio-box">
+        <div class="menu-item">
+          <span><strong>X-Tudo Combo</strong> — Pão, carne, ovo, bacon, salsicha, presunto, mussarela, alface, tomate, milho e batata palha </span>
+          <span>R$ 35,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span><strong>X-Burguer Especial Gourmet</strong> — Pão de hambúrguer, 1 hambúrguer 150g, queijo cheddar, bacon, salada e maionese da casa</span>
+          <span>R$ 33,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span><strong>X-Bacon</strong> — Pão, carne, ovo, +bacon, presunto, mussarela, alface, tomate, milho e batata palha</span>
+          <span>R$ 30,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span><strong>Batata Especial Grande</strong> — Batata frita com cheddar e bacon</span>
+          <span>R$ 41,00</span>
+        </div>
+
+        <div class="menu-item">
+          <span><strong>Cremes</strong> — Maracujá e morango</span>
+          <span>R$ 23,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pedido-final" id="pedido">
+    <div class="container">
+      <div class="pedido-final-box">
+        <h2>Peça agora mesmo!</h2>
+
+        <p>
+          Faça seu pedido online e receba nossos lanches deliciosos no conforto da sua casa.
+        </p>
+
+        <a href="https://pedido.anota.ai/loja/xburguersanduicheriaechoperia" target="_blank" class="btn-pedido">
+          Peça pelo Anota Ai!
+        </a>
+
+        <div class="contato-info">
+          <p><strong>📍 Endereço:</strong> Av Minas Gerais, 1 - Centro - Goianésia Goiás</p>
+          <p><strong>📞 Contato:</strong> WhatsApp (62) 3353-2982</p>
+          <p><strong>🕒 Funcionamento:</strong> Todos os dias das 17:30h às 00h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>X-Burguer Sanduicheria</strong></p>
+    <p>Seu hambúrguer favorito está aqui 🍔</p>
+    <p>© 2026 - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
